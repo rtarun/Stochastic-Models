@@ -1,2 +1,2 @@
-# random-walk
-Simulating a Random Walk
+
+Python code from simulating Stochastic Models
