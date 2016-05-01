@@ -1,0 +1,26 @@
+import math as m
+import random as r
+def PoissonProcess(L,T):
+    t=[0,]
+    i=0
+    N=0
+    while t[i]<=T:
+        U = r.random()
+        i += 1
+        t.append(t[i-1]-1/1*m.log(U))
+        if t[i] <= T:
+            N+= 1
+    return N,t[1:]
+
+L=4
+T=1
+t=list()
+n=5000
+for i in range(0,n):
+    N,t1=PoissonProcess(L,T)
+    t.append(t1[0])
+
+P = [1 if x>1 else 0 for x in t]
+PN10 = 1/n*sum(P)
+print(PN10)
+
